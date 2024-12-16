@@ -6,10 +6,17 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.BottomNavigation
+import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.primarySurface
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.knowmap.AI.ui.theme.KnowMapTheme
 
@@ -21,8 +28,8 @@ class MainActivity : ComponentActivity() {
             KnowMapTheme {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
-                    topBar = {
-                        TopNavigationBar()
+                    bottomBar = {
+                        BottomNavigationBar()
                     }
                 ) { innerPadding ->
                     // Здесь можно добавить содержимое вашего Scaffold
@@ -30,24 +37,25 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-}
-@Composable
-fun BottomNavigationBar(){
-    BottomNavigation(
-        backColor = MaterialTheme.colors.primarySurface,
-        contentColor =  MaterialTheme.colors.onPrimary,
-    ){
-        BottomNavigationItem(
-            icon = {
-                Icon(
-                    imgaVector = ImageVector.vectorResource(id = R.drawable.),
-                    contentDescription  = "History*/
-                )
-            },
-            selected = false,
-            onClick = {
 
-            }
-        )
+    @Composable
+    fun BottomNavigationBar() {
+        BottomNavigation(
+            backgroundColor = MaterialTheme.colors.primarySurface, // Исправлено: используем colorScheme вместо colors
+            contentColor = MaterialTheme.colors.onPrimary,
+        ) {
+            BottomNavigationItem(
+                icon = {
+                    Icon(
+                        ImageVector.vectorResource(id = R.drawable.ic_izbranoe), // Исправлено: imgaVector на imageVector
+                        contentDescription = "History" // Исправлено: закрывающая кавычка
+                    )
+                },
+                selected = false,
+                onClick = {
+                    // Обработка клика
+                }
+            )
+        }
     }
 }
