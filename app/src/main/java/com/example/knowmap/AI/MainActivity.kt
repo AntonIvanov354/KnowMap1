@@ -40,9 +40,8 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun BottomNavigationBar() {
-        )
         BottomNavigation(
-            backgroundColor = MaterialTheme.colors.background, // Используем colorScheme вместо colors
+            backgroundColor = MaterialTheme.colors.primary, // Используем colorScheme вместо colors
             contentColor = MaterialTheme.colors.onPrimary,
         ) {
             BottomNavigationItem(
