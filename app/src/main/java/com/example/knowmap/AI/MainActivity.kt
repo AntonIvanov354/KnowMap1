@@ -41,14 +41,50 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun BottomNavigationBar() {
         BottomNavigation(
-            backgroundColor = MaterialTheme.colors.primarySurface, // Исправлено: используем colorScheme вместо colors
+            backgroundColor = MaterialTheme.colors.error, // Используем colorScheme вместо colors
             contentColor = MaterialTheme.colors.onPrimary,
         ) {
             BottomNavigationItem(
                 icon = {
                     Icon(
-                        ImageVector.vectorResource(id = R.drawable.ic_izbranoe), // Исправлено: imgaVector на imageVector
-                        contentDescription = "History" // Исправлено: закрывающая кавычка
+                        imageVector = ImageVector.vectorResource(id = R.drawable.ic_izbranoe), // Исправлено: imageVector вместо imgaVector
+                        contentDescription = "Избранное" // Исправлено: изменено на "Избранное"
+                    )
+                },
+                selected = false,
+                onClick = {
+                    // Обработка клика
+                }
+            )
+            BottomNavigationItem(
+                icon = {
+                    Icon(
+                        imageVector = ImageVector.vectorResource(id = R.drawable.ic_akkaynt), // Исправлено: imageVector вместо imgaVector
+                        contentDescription = "Аккаунт" // Исправлено: изменено на "Аккаунт"
+                    )
+                },
+                selected = false,
+                onClick = {
+                    // Обработка клика
+                }
+            )
+            BottomNavigationItem(
+                icon = {
+                    Icon(
+                        imageVector = ImageVector.vectorResource(id = R.drawable.ic_akkaynt), // Исправлено: imageVector вместо imgaVector
+                        contentDescription = "Аккаунт" // Исправлено: изменено на "Аккаунт"
+                    )
+                },
+                selected = false,
+                onClick = {
+                    // Обработка клика
+                }
+            )
+            BottomNavigationItem(
+                icon = {
+                    Icon(
+                        imageVector = ImageVector.vectorResource(id = R.drawable.ic_history), // Исправлено: imageVector вместо imgaVector
+                        contentDescription = "Аккаунт" // Исправлено: изменено на "Аккаунт"
                     )
                 },
                 selected = false,
