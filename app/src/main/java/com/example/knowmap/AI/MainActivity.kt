@@ -40,8 +40,9 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun BottomNavigationBar() {
+        )
         BottomNavigation(
-            backgroundColor = MaterialTheme.colors.error, // Используем colorScheme вместо colors
+            backgroundColor = MaterialTheme.colors.background, // Используем colorScheme вместо colors
             contentColor = MaterialTheme.colors.onPrimary,
         ) {
             BottomNavigationItem(
@@ -71,7 +72,7 @@ class MainActivity : ComponentActivity() {
             BottomNavigationItem(
                 icon = {
                     Icon(
-                        imageVector = ImageVector.vectorResource(id = R.drawable.ic_akkaynt), // Исправлено: imageVector вместо imgaVector
+                        imageVector = ImageVector.vectorResource(id = R.drawable.ic_i11), // Исправлено: imageVector вместо imgaVector
                         contentDescription = "Аккаунт" // Исправлено: изменено на "Аккаунт"
                     )
                 },
